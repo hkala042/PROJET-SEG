@@ -50,7 +50,7 @@ public class Activity2 extends AppCompatActivity {
                     finish();
                 }
                 catch( Exception e){
-                    Toast.makeText(Activity2.this, "Error", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(Activity2.this, "Error", Toast.LENGTH_SHORT).show();
                 }
             }
 
