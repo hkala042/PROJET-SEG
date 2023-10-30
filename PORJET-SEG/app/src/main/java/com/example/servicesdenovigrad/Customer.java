@@ -1,3 +1,5 @@
+package com.example.servicesdenovigrad;
+
 public class Customer extends User{
 
     // le constructeur

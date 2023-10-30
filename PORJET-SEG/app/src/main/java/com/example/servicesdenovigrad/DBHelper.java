@@ -1,4 +1,4 @@
-/***********************************************************************
+package com.example.servicesdenovigrad; /***********************************************************************
  * https://youtu.be/312RhjfetP8?si=HdSoMO544uq9TdI0
  * ceci est le lien de la video duquel je me suis inspire pour ecrire ce code
  */
@@ -9,6 +9,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import com.example.servicesdenovigrad.Admin;
+import com.example.servicesdenovigrad.Customer;
 
 import java.util.ArrayList;
 

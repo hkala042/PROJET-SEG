@@ -1,3 +1,5 @@
+package com.example.servicesdenovigrad;
+
 public class Admin extends User{
 
     //le constructeur

@@ -30,7 +30,7 @@ public class Activity2 extends AppCompatActivity {
 
 
 
-
+// a l appui du bouton create, si les informations sont toutes remplies, une nouvel utilisateur est cree et envoye dans la base des donnees de la MainActivity
         create = (Button) findViewById(R.id.btn_create);
         create.setOnClickListener(View.OnClickListener() {
             public void onClick( View v){

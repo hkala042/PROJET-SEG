@@ -21,10 +21,26 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        User user1;
+
+        try{
+            user1 = getIntent().getExtras().getParcelable("user_info");
+        }
+        catch(Exception e){
+
+        }
+
         txt_username = findViewById(R.id.txt_userName);
         txt_password = findViewById(R.id.txt_ps);
 
         DBHelper db = new DBHelper(MainActivity.this);
+
+        // enregistre le compte nouvellement cree dans la base de donnees
+        if ( user1 != null){
+            db.add(user1);
+        }
+
+
 
         Intent i1 = new Intent(MainActivity.this, Activity3.class);
         Intent i2 = new Intent( MainActivity.this, Activity2.class);
@@ -38,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 if (user == null) {
                     Toast.makeText(MainActivity.this, "Compte inexistant, veuillez creer un nouveau compte", Toast.LENGTH_SHORT).show();
                 } else if (user.checkPS(txt_password.getText().toString())) {
+                    i1.putExtra("user_info", user);
                     startActivity(i1);
                 } else {
                     Toast.makeText(MainActivity.this, "Mot de passe incorrect", Toast.LENGTH_SHORT).show();

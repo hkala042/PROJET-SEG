@@ -1,3 +1,5 @@
+package com.example.servicesdenovigrad;
+
 import android.os.Parcelable;
 
 public class User extends Parcelable {
