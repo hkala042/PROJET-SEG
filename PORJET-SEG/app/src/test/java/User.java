@@ -1,4 +1,6 @@
-public class User {
+import android.os.Parcelable;
+
+public class User extends Parcelable {
 
     // les attributs de l utilisateur
 
