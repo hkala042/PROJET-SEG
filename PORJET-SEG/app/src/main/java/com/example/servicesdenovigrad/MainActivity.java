@@ -21,7 +21,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        User user1;
+        User user1, userdefault;
+        user1 = null;
+
+        userdefault = new Admin ("Hilaire", "hk42", "Enfin");
 
         try{
             user1 = getIntent().getExtras().getParcelable("user_info");
@@ -34,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         txt_password = findViewById(R.id.txt_ps);
 
         DBHelper db = new DBHelper(MainActivity.this);
+        db.add(userdefault);
 
         // enregistre le compte nouvellement cree dans la base de donnees
         if ( user1 != null){
@@ -47,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         connexion = (Button) findViewById(R.id.btn_connect);
-        connexion.setOnClickListener(View.OnClickListener() {
+        connexion.setOnClickListener(new View.OnClickListener() {
             public void onClick (View v){
                 try{
                 User user = db.find(txt_username.getText().toString());
@@ -63,10 +67,10 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_SHORT).show();
                 }
         }
-        })
+        });
 
         create = (Button) findViewById(R.id.btn_cree);
-        create.setOnClickListener(View.OnClickListener(){
+        create.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 startActivity(i2);
             }

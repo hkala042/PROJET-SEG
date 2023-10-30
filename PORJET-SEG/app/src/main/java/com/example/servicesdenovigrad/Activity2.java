@@ -32,7 +32,7 @@ public class Activity2 extends AppCompatActivity {
 
 // a l appui du bouton create, si les informations sont toutes remplies, une nouvel utilisateur est cree et envoye dans la base des donnees de la MainActivity
         create = (Button) findViewById(R.id.btn_create);
-        create.setOnClickListener(View.OnClickListener() {
+        create.setOnClickListener(new View.OnClickListener() {
             public void onClick( View v){
                 try {
                     Intent i = new Intent(Activity2.this, MainActivity.class);
@@ -57,10 +57,10 @@ public class Activity2 extends AppCompatActivity {
         });
 
         back = (Button) findViewById(R.id.btn_return);
-        back.setOnClickListener(View.OnClickListener(){
+        back.setOnClickListener(new View.OnClickListener(){
             public void onClick( View v){
                 finish();
             }
-        })
+        });
     }
 }
